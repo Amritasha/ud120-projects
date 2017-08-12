@@ -38,7 +38,7 @@ print "KNeighbors"
 print
 from sklearn.neighbors import KNeighborsClassifier
 t0 = time()
-clf = KNeighborsClassifier(n_neighbors=13)
+clf = KNeighborsClassifier(n_neighbors=13, weights='distance', algorithm='auto')
 clf.fit(features_train, labels_train)
 print "training time:", round(time()-t0, 3), "s"
 t1 = time()
