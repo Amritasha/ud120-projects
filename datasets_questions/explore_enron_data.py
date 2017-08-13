@@ -18,5 +18,26 @@
 import pickle
 
 enron_data = pickle.load(open("../final_project/final_project_dataset.pkl", "r"))
+print len(enron_data)
 
+for key,value in enron_data.items():
+    print key
+    print len(value)
 
+count=0
+for key,value in enron_data.items():
+    if enron_data[key]["poi"]==1:
+        count = count+1
+
+print count
+
+for value in enron_data["PRENTICE JAMES"]:
+    print value, enron_data["PRENTICE JAMES"][value]
+
+print "Welsey to poi mails"
+print enron_data["COLWELL WESLEY"]["from_this_person_to_poi"]
+
+for value in enron_data["COLWELL WESLEY"]:
+    print value, enron_data["COLWELL WESLEY"][value]
+
+print "jeffrey exercised stock options" , enron_data["SKILLING JEFFREY K"]["exercised_stock_options"]
