@@ -41,3 +41,21 @@ for value in enron_data["COLWELL WESLEY"]:
     print value, enron_data["COLWELL WESLEY"][value]
 
 print "jeffrey exercised stock options" , enron_data["SKILLING JEFFREY K"]["exercised_stock_options"]
+
+print "payment to lay" ,enron_data["LAY KENNETH L"]["total_payments"]
+
+print
+cnt =0
+for key,value in enron_data.items():
+    if enron_data[key]["salary"] != 'NaN':
+        cnt=cnt+1
+
+print "salary not present ", cnt
+
+print
+cnt =0
+for key,value in enron_data.items():
+    if enron_data[key]["email_address"]!= 'NaN':
+        cnt=cnt+1
+print "email not present", cnt
+
