@@ -1,5 +1,6 @@
 #!/usr/bin/python
 
+import math
 
 def outlierCleaner(predictions, ages, net_worths):
     """
@@ -15,6 +16,12 @@ def outlierCleaner(predictions, ages, net_worths):
 
     ### your code goes here
 
-    
+    error = (net_worths - predictions)**2
+    #print error
+    cleaned_data = zip(ages, net_worths, error)
+    cleaned_data.sort(key=lambda x:x[2])
+    n = len(cleaned_data)
+    del cleaned_data[ - (int(0.1*n)):]
+    print len(cleaned_data)
     return cleaned_data
 
